@@ -22,7 +22,8 @@ namespace API
         {
             services.AddDbContext<DataContext>(options =>
             {
-                options.UseSqlite(_configuration.GetConnectionString("DefaultConnection"));
+                options.UseSqlServer(@"Server=localhost;Database=master;Trusted_Connection=True;");
+                //options.UseSqlite(_configuration.GetConnectionString("DefaultConnection"));
             });
 
             services.AddControllers();
